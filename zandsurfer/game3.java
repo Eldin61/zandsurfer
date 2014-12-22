@@ -23,17 +23,26 @@ public class game3 extends World
 
         prepare();
     }
+    private Counter theCounter;
+    public Counter getCounter()
+    {
+        return theCounter;
+    }
     public void act()
     {
         addObjects();
     }
+    
     private void prepare()
     {
         Boat boat = new Boat();
         addObject(boat, 409, 797);
         boat.setLocation(464, 791);
         boat.setLocation(453, 765);
+        theCounter = new Counter();
+        addObject(theCounter, 810, 20);
     }
+
     public void addObjects()
     {
         spawnCounter++;

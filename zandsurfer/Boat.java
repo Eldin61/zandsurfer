@@ -12,16 +12,22 @@ public class Boat extends Actor
     public void act() 
     {
         movement();
-        colission();
+        if(!hitTreasure())
+        {
+            colission();
+        }
     }    
+
     public Boat()
     {
         setImage();
     }
+
     public void setImage()
     {
         setImage(new GreenfootImage("Boat1.png"));
     }
+
     public void movement()
     {
         if(Greenfoot.isKeyDown("left"))
@@ -41,12 +47,33 @@ public class Boat extends Actor
             setLocation(getX(), getY() + speed);
         }
     }
+
     public void colission()
     {
         Actor rock = getOneIntersectingObject(Rock.class);
         if (rock != null)
         {
+            Explosion explosion = new Explosion();
+            getWorld().addObject(explosion, getX(), getY());
+            getWorld().removeObject(rock);
             getWorld().removeObject(this);
         }
+    }
+
+    private boolean hitTreasure()
+    {
+        Actor schat = getOneIntersectingObject(Schat.class);
+        if (schat != null)
+        {
+            game3 gameWorld = (game3) getWorld();
+            Counter counter = gameWorld.getCounter();
+            counter.bumpCount(1);
+            getWorld().removeObject(schat);
+            return true;
+        } else 
+        {
+            return false;
+        }
+
     }
 }

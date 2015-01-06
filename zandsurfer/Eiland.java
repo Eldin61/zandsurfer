@@ -8,12 +8,29 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Eiland extends Actor
 {
+    private int speed = 2;
     /**
-     * Act - do whatever the Eiland wants to do. This method is called whenever
+     * Act - do whatever the Rock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        movement();
+    }   
+    public Eiland()
+    {
+        setImage();
+    }
+    public void movement()
+    {
+        setLocation(getX(), getY() + speed);
+        if(getY() == getWorld().getHeight() - 10)
+        {
+            getWorld().removeObject(this);
+        }
+    }
+    public void setImage()
+    {
+        setImage(new GreenfootImage("Eiland.png"));
+    }
 }

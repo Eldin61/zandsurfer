@@ -10,17 +10,26 @@ public class game3 extends World
 {
     private int spawnX = 0;
     private int spawnX2 = 0;
+    private int spawnX3 = 0;
     private int spawnCounter = 0;
     private int spawnTreasure = 0;
+    private static final String bgImageName = "watergoed.jpg";
+    private static final double scrollSpeed = 2.5;
+    private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
+    
+    private GreenfootImage bgImage, bgBase;
+    private int scrollPosition = 0;
     /**
      * Constructor for objects of class game3.
      * 
      */
     public game3()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 900, 1); 
-
+        setBackground(bgImageName);
+        bgImage = new GreenfootImage(getBackground());
+        bgBase = new GreenfootImage(picWidth, getHeight());
+        bgBase.drawImage(bgImage, 0, 0);
         prepare();
     }
     private Counter theCounter;
@@ -31,8 +40,17 @@ public class game3 extends World
     public void act()
     {
         addObjects();
+        scrollPosition -= scrollSpeed;
+        while(scrollSpeed > 0 && scrollPosition < -picWidth) scrollPosition += picWidth;
+        while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picWidth;
+        paint(scrollPosition);
     }
-    
+    private void paint(int position)
+    {
+        GreenfootImage bg = getBackground();
+        bg.drawImage(bgBase, position, 0);
+        bg.drawImage(bgImage, position + picWidth, 0);
+    }
     private void prepare()
     {
         Boat boat = new Boat();
@@ -47,9 +65,10 @@ public class game3 extends World
     {
         spawnCounter++;
         spawnTreasure++;
-        spawnX = Greenfoot.getRandomNumber(900);
-        spawnX2 = Greenfoot.getRandomNumber(900);
-        if (spawnCounter == 150)
+        spawnX = Greenfoot.getRandomNumber(850)+20;
+        spawnX2 = Greenfoot.getRandomNumber(850)+20;
+        spawnX3 = Greenfoot.getRandomNumber(150)+50;
+        if (spawnCounter == spawnX3 || spawnCounter > 150)
         {
             Rock rock = new Rock();
             Rock rock2 = new Rock();
@@ -57,13 +76,17 @@ public class game3 extends World
             addObject(rock2, spawnX2, 0);
             spawnCounter = 0;
             spawnX = 0;
-            spawnX2 = 0;          
-        }
+            spawnX2 = 0;
+            spawnX3 = 0;
+        }   
         if(spawnTreasure == 310)
         {
             Schat schat = new Schat();
             addObject(schat, spawnX, 0);
+            Eiland eiland = new Eiland();
+            addObject(eiland, spawnX2, 0);
             spawnX = 0;
+            spawnX2 = 0;
             spawnTreasure = 0;
         }
     }

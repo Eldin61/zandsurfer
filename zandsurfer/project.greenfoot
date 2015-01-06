@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Jan 06 15:32:22 CET 2015
+#Tue Jan 06 16:53:50 CET 2015
 dependency9.type=UsesDependency
 target4.type=ClassTarget
 dependency3.from=Boat
@@ -43,7 +43,6 @@ target1.width=80
 target6.editor.height=700
 dependency5.type=UsesDependency
 target2.typeParameters=
-class.game3.image=watergoed.jpg
 dependency3.to=Rock
 target3.showInterface=false
 class.Boat.superclass=greenfoot.Actor

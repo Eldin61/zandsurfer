@@ -19,10 +19,6 @@ public class game3 extends World
     
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
-    /**
-     * Constructor for objects of class game3.
-     * 
-     */
     public game3()
     {    
         super(900, 900, 1); 

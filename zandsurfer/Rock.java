@@ -31,6 +31,7 @@ public class Rock extends Actor
     }
     public void setImage()
     {
+        double img = Math.random();
         setImage(new GreenfootImage("rock.png"));
     }
 }

@@ -15,7 +15,7 @@ public class game3 extends World
     private int spawnTreasure = 0;
     private static final String bgImageName = "watergoed.jpg";
     private static final double scrollSpeed = 2.5;
-    private static final int picWidth = (new GreenfootImage(bgImageName)).getWidth();
+    private static final int picHeight = (new GreenfootImage(bgImageName)).getHeight();
     
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
@@ -28,7 +28,7 @@ public class game3 extends World
         super(900, 900, 1); 
         setBackground(bgImageName);
         bgImage = new GreenfootImage(getBackground());
-        bgBase = new GreenfootImage(picWidth, getHeight());
+        bgBase = new GreenfootImage(getWidth(), picHeight);
         bgBase.drawImage(bgImage, 0, 0);
         prepare();
     }
@@ -40,16 +40,16 @@ public class game3 extends World
     public void act()
     {
         addObjects();
-        scrollPosition -= scrollSpeed;
-        while(scrollSpeed > 0 && scrollPosition < -picWidth) scrollPosition += picWidth;
-        while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picWidth;
+        scrollPosition += scrollSpeed;
+        while(scrollSpeed > 0 && scrollPosition < -picHeight) scrollPosition += picHeight;
+        while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picHeight;
         paint(scrollPosition);
     }
     private void paint(int position)
     {
         GreenfootImage bg = getBackground();
-        bg.drawImage(bgBase, position, 0);
-        bg.drawImage(bgImage, position + picWidth, 0);
+        bg.drawImage(bgBase, 0, position);
+        bg.drawImage(bgImage, 0, position + picHeight);
     }
     private void prepare()
     {

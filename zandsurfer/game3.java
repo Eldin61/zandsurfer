@@ -68,8 +68,8 @@ public class game3 extends World
         {
             Rock rock = new Rock();
             Rock rock2 = new Rock();
-            addObject(rock, spawnX, 0);
-            addObject(rock2, spawnX2, 0);
+            addObject(rock, spawnX, -50);
+            addObject(rock2, spawnX2, -50);
             spawnCounter = 0;
             spawnX = 0;
             spawnX2 = 0;
@@ -78,9 +78,9 @@ public class game3 extends World
         if(spawnTreasure == 310)
         {
             Schat schat = new Schat();
-            addObject(schat, spawnX, 0);
+            addObject(schat, spawnX, -50);
             Eiland eiland = new Eiland();
-            addObject(eiland, spawnX2, 0);
+            addObject(eiland, spawnX2, -50);
             spawnX = 0;
             spawnX2 = 0;
             spawnTreasure = 0;

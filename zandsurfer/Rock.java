@@ -15,11 +15,20 @@ public class Rock extends Actor
      */
     public void act() 
     {
+        colission();
         movement();
     }   
     public Rock()
     {
         setImage();
+    }
+     public void colission()
+    {
+        Schat treasure = (Schat)getOneObjectAtOffset(getX() + 5, getY() + 5,  Schat.class);
+        if (treasure != null)
+        {
+            setLocation(getX() + 50, getY());
+        }
     }
     public void movement()
     {
@@ -28,10 +37,10 @@ public class Rock extends Actor
         {
             getWorld().removeObject(this);
         }
+        
     }
     public void setImage()
     {
-        double img = Math.random();
         setImage(new GreenfootImage("rock.png"));
     }
 }

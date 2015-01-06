@@ -15,11 +15,21 @@ public class Eiland extends Actor
      */
     public void act() 
     {
+        colission();
         movement();
     }   
     public Eiland()
     {
         setImage();
+    }
+    public void colission()
+    {
+        Actor treasure = getOneIntersectingObject(Schat.class);
+        Actor rock = getOneIntersectingObject(Rock.class);
+        if (treasure != null || rock != null)
+        {
+            setLocation(getX() + 10, getY());
+        }
     }
     public void movement()
     {

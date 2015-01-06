@@ -30,21 +30,13 @@ public class Boat extends Actor
 
     public void movement()
     {
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("a"))
         {
             setLocation(getX() - speed, getY());
         }
-        if (Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("d"))
         {
             setLocation(getX() + speed, getY());
-        }
-        if (Greenfoot.isKeyDown("up"))
-        {
-            setLocation(getX(), getY() - speed);
-        }
-        if (Greenfoot.isKeyDown("down"))
-        {
-            setLocation(getX(), getY() + speed);
         }
     }
 

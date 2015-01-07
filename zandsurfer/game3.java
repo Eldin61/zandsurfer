@@ -70,11 +70,10 @@ public class game3 extends World
        if (timer>0)
         {
             timer--;
-            if(timer == 0) Greenfoot.stop();
-        } 
+            if(timer == 0) Greenfoot.stop();}        } 
+    
         
-    }
-
+ 
     public void addObjects()
     {
         spawnCounter++;

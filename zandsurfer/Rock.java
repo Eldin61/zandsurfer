@@ -41,6 +41,6 @@ public class Rock extends Actor
     }
     public void setImage()
     {
-        setImage(new GreenfootImage("rock.png"));
+        setImage(new GreenfootImage("rockbig.png"));
     }
 }

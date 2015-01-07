@@ -16,13 +16,13 @@ public class game3 extends World
     private static final String bgImageName = "watergoed.jpg";
     private static final double scrollSpeed = 2.5;
     private static final int picHeight = (new GreenfootImage(bgImageName)).getHeight();
-    
+  
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
     public game3()
     {    
         super(900, 900, 1); 
-        setBackground(bgImageName);
+          setBackground(bgImageName);
         bgImage = new GreenfootImage(getBackground());
         bgBase = new GreenfootImage(getWidth(), picHeight);
         bgBase.drawImage(bgImage, 0, 0);
@@ -37,15 +37,15 @@ public class game3 extends World
     {
         addObjects();
         scrollPosition += scrollSpeed;
-        while(scrollSpeed > 0 && scrollPosition < -picHeight) scrollPosition += picHeight;
-        while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picHeight;
+        while(scrollSpeed > 0 && scrollPosition > -picHeight) scrollPosition -= picHeight;
+        while(scrollSpeed < 0 && scrollPosition < 0) scrollPosition += picHeight;
         paint(scrollPosition);
     }
     private void paint(int position)
     {
         GreenfootImage bg = getBackground();
-        bg.drawImage(bgBase, 0, position);
-        bg.drawImage(bgImage, 0, position + picHeight);
+        bg.drawImage(bgBase,0,position);
+        bg.drawImage(bgImage,0 , position + picHeight);
     }
     private void prepare()
     {

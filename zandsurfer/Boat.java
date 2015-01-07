@@ -43,11 +43,19 @@ public class Boat extends Actor
     public void colission()
     {
         Actor rock = getOneIntersectingObject(Rock.class);
+        Actor eiland = getOneIntersectingObject(Eiland.class);
         if (rock != null)
         {
             Explosion explosion = new Explosion();
             getWorld().addObject(explosion, getX(), getY());
             getWorld().removeObject(rock);
+            getWorld().removeObject(this);
+        }
+        if(eiland != null)
+        {
+            Explosion explosion = new Explosion();
+            getWorld().addObject(explosion, getX(), getY());
+            getWorld().removeObject(eiland);
             getWorld().removeObject(this);
         }
     }

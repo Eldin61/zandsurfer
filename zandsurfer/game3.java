@@ -29,7 +29,7 @@ public class game3 extends World
         bgBase.drawImage(bgImage, 0, 0);
         prepare();
         TimerText timerText = new TimerText();
-        addObject(timerText, 20, 20);
+        addObject(timerText, 60, 20);
         timerText.setText("Time left: " + (timer/60));
     }
 

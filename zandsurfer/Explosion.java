@@ -21,5 +21,6 @@ public class Explosion extends Actor
         {
             getWorld().removeObject(this);
         }
+        setLocation(getX(), getY() + 2);
     } 
 }

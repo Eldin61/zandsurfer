@@ -14,21 +14,21 @@ public class game3 extends World
     private int spawnCounter = 0;
     private int spawnTreasure = 0;
     private static final String bgImageName = "watergoed.jpg";
-    private static final double scrollSpeed = 2.5;
+    private static final int scrollSpeed = 2;
     private static final int picHeight = (new GreenfootImage(bgImageName)).getHeight();
-  
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
+    private Counter theCounter;
     public game3()
     {    
         super(900, 900, 1); 
-          setBackground(bgImageName);
+        setBackground(bgImageName);
         bgImage = new GreenfootImage(getBackground());
         bgBase = new GreenfootImage(getWidth(), picHeight);
         bgBase.drawImage(bgImage, 0, 0);
         prepare();
     }
-    private Counter theCounter;
+            
     public Counter getCounter()
     {
         return theCounter;
@@ -37,15 +37,17 @@ public class game3 extends World
     {
         addObjects();
         scrollPosition += scrollSpeed;
-        while(scrollSpeed > 0 && scrollPosition > -picHeight) scrollPosition -= picHeight;
+        while(scrollSpeed > 0 && scrollPosition > picHeight) scrollPosition -= picHeight;
         while(scrollSpeed < 0 && scrollPosition < 0) scrollPosition += picHeight;
         paint(scrollPosition);
+        
     }
+     
     private void paint(int position)
     {
         GreenfootImage bg = getBackground();
-        bg.drawImage(bgBase,0,position);
-        bg.drawImage(bgImage,0 , position + picHeight);
+        bg.drawImage(bgBase,0, position);
+        bg.drawImage(bgImage,0 , position - picHeight);
     }
     private void prepare()
     {
@@ -86,4 +88,5 @@ public class game3 extends World
             spawnTreasure = 0;
         }
     }
+
 }

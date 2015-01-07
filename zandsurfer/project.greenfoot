@@ -1,12 +1,20 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Wed Jan 07 20:20:56 CET 2015
+=======
+#Wed Jan 07 20:44:37 CET 2015
+>>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
 class.Schat.image=treasure.png
 target2.width=80
 target5.naviview.expanded=true
 dependency12.type=UsesDependency
 target1.type=ClassTarget
 target7.showInterface=false
+<<<<<<< HEAD
 mainWindow.height=1072
+=======
+mainWindow.height=1056
+>>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
 target2.editor.y=16
 target6.typeParameters=
 target2.editor.x=-8
@@ -65,7 +73,11 @@ target2.showInterface=false
 dependency1.from=game3
 target5.editor.y=26
 target5.editor.x=-1
+<<<<<<< HEAD
 mainWindow.y=16
+=======
+mainWindow.y=-8
+>>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
 mainWindow.x=-8
 target5.showInterface=false
 class.game3.superclass=greenfoot.World
@@ -106,7 +118,11 @@ target1.y=10
 target4.naviview.expanded=true
 target1.x=70
 target5.typeParameters=
+<<<<<<< HEAD
 target1.editor.width=940
+=======
+target1.editor.width=960
+>>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
 dependency2.from=game3
 dependency6.from=Boat
 project.charset=UTF-8
@@ -141,8 +157,13 @@ target1.typeParameters=
 target3.width=80
 target4.width=90
 dependency7.from=Boat
+<<<<<<< HEAD
 target1.editor.y=24
 target1.editor.x=980
+=======
+target1.editor.y=0
+target1.editor.x=960
+>>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
 target5.width=80
 class.Schat.superclass=greenfoot.Actor
 dependency4.to=Schat

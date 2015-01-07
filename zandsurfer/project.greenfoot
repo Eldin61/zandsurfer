@@ -1,25 +1,18 @@
 #Greenfoot properties
-<<<<<<< HEAD
-#Wed Jan 07 20:20:56 CET 2015
-=======
-#Wed Jan 07 20:44:37 CET 2015
->>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
+#Wed Jan 07 21:10:32 CET 2015
 class.Schat.image=treasure.png
 target2.width=80
 target5.naviview.expanded=true
 dependency12.type=UsesDependency
 target1.type=ClassTarget
 target7.showInterface=false
-<<<<<<< HEAD
 mainWindow.height=1072
-=======
-mainWindow.height=1056
->>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
 target2.editor.y=16
 target6.typeParameters=
 target2.editor.x=-8
 dependency9.to=Schat
 target1.height=50
+class.TimerText.superclass=greenfoot.Actor
 target2.editor.width=1932
 dependency2.type=UsesDependency
 target5.type=ClassTarget
@@ -34,8 +27,9 @@ target4.showInterface=false
 target2.y=70
 target2.x=160
 dependency10.to=Eiland
+dependency14.from=Schat
 target3.naviview.expanded=true
-target1.editor.height=1040
+target1.editor.height=1072
 dependency4.from=game3
 dependency5.to=Explosion
 target4.editor.height=700
@@ -49,7 +43,7 @@ class.Counter.superclass=greenfoot.Actor
 target4.typeParameters=
 target5.name=Boat
 world.lastInstantiated=game3
-mainWindow.width=1936
+mainWindow.width=1932
 target5.height=50
 dependency13.type=UsesDependency
 target7.editor.width=900
@@ -73,11 +67,7 @@ target2.showInterface=false
 dependency1.from=game3
 target5.editor.y=26
 target5.editor.x=-1
-<<<<<<< HEAD
 mainWindow.y=16
-=======
-mainWindow.y=-8
->>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
 mainWindow.x=-8
 target5.showInterface=false
 class.game3.superclass=greenfoot.World
@@ -88,13 +78,14 @@ target2.name=Rock
 dependency9.from=Boat
 target6.name=Eiland
 target6.naviview.expanded=true
-target6.editor.y=44
-target6.editor.x=40
+target6.editor.y=16
+target6.editor.x=-8
 target5.editor.height=1055
 dependency10.type=UsesDependency
 class.Explosion.superclass=greenfoot.Actor
 class.Boat.superclass=greenfoot.Actor
 dependency2.to=Rock
+dependency14.type=UsesDependency
 target3.type=ClassTarget
 target6.height=50
 target3.editor.width=900
@@ -118,11 +109,7 @@ target1.y=10
 target4.naviview.expanded=true
 target1.x=70
 target5.typeParameters=
-<<<<<<< HEAD
-target1.editor.width=940
-=======
-target1.editor.width=960
->>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
+target1.editor.width=1936
 dependency2.from=game3
 dependency6.from=Boat
 project.charset=UTF-8
@@ -134,10 +121,10 @@ dependency3.to=Rock
 target7.name=Schat
 target2.naviview.expanded=true
 dependency11.type=UsesDependency
-package.numDependencies=13
+package.numDependencies=14
 dependency13.to=Rock
 package.numTargets=7
-target6.editor.width=900
+target6.editor.width=1936
 dependency1.type=UsesDependency
 target4.type=ClassTarget
 dependency8.to=Counter
@@ -151,19 +138,14 @@ target6.width=80
 target7.naviview.expanded=true
 class.Rock.superclass=greenfoot.Actor
 target7.width=80
-target6.editor.height=700
+target6.editor.height=1072
 dependency3.from=Boat
 target1.typeParameters=
 target3.width=80
 target4.width=90
+target1.editor.y=16
 dependency7.from=Boat
-<<<<<<< HEAD
-target1.editor.y=24
-target1.editor.x=980
-=======
-target1.editor.y=0
-target1.editor.x=960
->>>>>>> 5e041682bded3551ea049b610a03973f429e0cbd
+target1.editor.x=-8
 target5.width=80
 class.Schat.superclass=greenfoot.Actor
 dependency4.to=Schat
@@ -171,3 +153,4 @@ target4.editor.width=900
 target4.name=Explosion
 target4.height=50
 target1.width=80
+dependency14.to=Rock

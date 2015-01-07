@@ -15,8 +15,17 @@ public class Schat extends Actor
      */
     public void act() 
     {
-        movement();
+        colission();
+        movement();        
     }    
+    public void colission()
+    {
+        Actor rock = getOneIntersectingObject(Rock.class);
+        if(rock != null)
+        {
+            getWorld().removeObject(rock);
+        }
+    }
     public void movement()
     {
         setLocation(getX(), getY() + speed);

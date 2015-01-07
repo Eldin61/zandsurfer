@@ -25,7 +25,7 @@ public class Boat extends Actor
 
     public void setImage()
     {
-        setImage(new GreenfootImage("Boat1.png"));
+        setImage(new GreenfootImage("Boat2.png"));
     }
 
     public void movement()

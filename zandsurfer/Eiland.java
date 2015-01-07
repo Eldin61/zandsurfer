@@ -26,9 +26,13 @@ public class Eiland extends Actor
     {
         Actor treasure = getOneIntersectingObject(Schat.class);
         Actor rock = getOneIntersectingObject(Rock.class);
-        if (treasure != null || rock != null)
+        if (treasure != null)
         {
-            setLocation(getX() + 10, getY());
+            getWorld().removeObject(treasure);
+        }
+        if(rock != null)
+        {
+            getWorld().removeObject(rock);
         }
     }
     public void movement()

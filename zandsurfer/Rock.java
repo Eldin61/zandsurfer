@@ -18,18 +18,21 @@ public class Rock extends Actor
         colission();
         movement();
     }   
+
     public Rock()
     {
         setImage();
     }
-     public void colission()
+
+    public void colission()
     {
-        Schat treasure = (Schat)getOneObjectAtOffset(getX() + 5, getY() + 5,  Schat.class);
-        if (treasure != null)
+        Actor rock   = getOneIntersectingObject(Rock.class);
+        if(rock != null)
         {
-            setLocation(getX() + 50, getY());
+            getWorld().removeObject(rock);
         }
     }
+
     public void movement()
     {
         setLocation(getX(), getY() + speed);
@@ -37,8 +40,9 @@ public class Rock extends Actor
         {
             getWorld().removeObject(this);
         }
-        
+
     }
+
     public void setImage()
     {
         setImage(new GreenfootImage("rock.png"));

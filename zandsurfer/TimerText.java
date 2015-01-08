@@ -8,25 +8,20 @@ import java.awt.Color;
  */
 public class TimerText extends Actor
 {
+    private int tijdslimiet;
     /**
      * Act - do whatever the TimerText wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }  
     public TimerText()
     {
         this("");
     }
- 
-    public TimerText(String text)
+        public TimerText(String text)
     {
         setText(text);
     }
- 
-    public void setText(String text)
+        public void setText(String text)
     {
         setImage(new GreenfootImage(text, 24, Color.black, new Color(0, 0, 0, 0)));
     } 

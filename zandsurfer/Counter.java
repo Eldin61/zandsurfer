@@ -9,7 +9,7 @@ import java.awt.Color;
 public class Counter extends Actor
 {
     private int totalCount = 0;
-
+    
     public Counter()
     {
         setImage(new GreenfootImage("Score: 0", 28, Color.BLACK, null));

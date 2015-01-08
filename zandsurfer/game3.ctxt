@@ -15,13 +15,8 @@ comment4.params=
 comment4.target=void\ prepare()
 comment5.params=
 comment5.target=void\ timerFunc()
-<<<<<<< HEAD
-comment6.params=
-comment6.target=void\ addObjects()
-=======
 comment5.text=\r\n\ Hier\ tellen\ we\ af\ voor\ de\ timer.\r\n
 comment6.params=
 comment6.target=void\ addObjects()
 comment6.text=\r\n\ Hier\ geven\ we\ de\ objecten\ een\ random\ X\ waarde\ tussen\ 20\ en\ 870.\ Zo\ spawnt\ die\ op\ een\ random\ plaats\r\n\ bovenaan\ de\ map.\ Ook\ de\ spawncounter\ staat\ erin\ en\ die\ is\ laten\ we\ ook\ random\ activeren.\ Door\ middel\ \r\n\ van\ een\ random\ getal\ tussen\ de\ 50\ en\ 200.\ Als\ spawncounter\ boven\ de\ 150\ komt\ willen\ we\ hem\ gelijk\ \r\n\ spawnen\ omdat\ de\ act\ steps\ anders\ veel\ te\ snel\ gaan.\r\n
->>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
 numComments=7

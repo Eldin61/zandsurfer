@@ -19,8 +19,11 @@ public class game3 extends World
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
     private Counter theCounter;
+<<<<<<< HEAD
     private int timer = 360;
     TimerText timerText = new TimerText();
+=======
+>>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
     public game3()
     {    
         super(900, 900, 1); 
@@ -29,6 +32,7 @@ public class game3 extends World
         bgBase = new GreenfootImage(getWidth(), picHeight);
         bgBase.drawImage(bgImage, 0, 0);
         prepare();
+<<<<<<< HEAD
         // add world instance field
 
         // in the constructor (or a method it calls)
@@ -36,6 +40,8 @@ public class game3 extends World
         timerText.setText("Time left: " + (timer/60));
         
             
+=======
+>>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
     }
 
     public Counter getCounter()
@@ -49,11 +55,13 @@ public class game3 extends World
         while(scrollSpeed > 0 && scrollPosition > picHeight) scrollPosition -= picHeight;
         while(scrollSpeed < 0 && scrollPosition < 0) scrollPosition += picHeight;
         paint(scrollPosition);
+<<<<<<< HEAD
         timerFunc();
         timer--;
         if (timer%60==0) timerText.setText("Time left: " + (timer/60));
+=======
+>>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
     }
-
     private void paint(int position)
     {
         GreenfootImage bg = getBackground();
@@ -69,8 +77,8 @@ public class game3 extends World
         boat.setLocation(453, 765);
         theCounter = new Counter();
         addObject(theCounter, 810, 20);
-
     }
+<<<<<<< HEAD
     public void timerFunc()
     {
         timer--;
@@ -79,6 +87,8 @@ public class game3 extends World
             System.out.println("Game Over");
         } 
     }
+=======
+>>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
         
  
     public void addObjects()

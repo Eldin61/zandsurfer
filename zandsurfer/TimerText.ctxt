@@ -1,4 +1,5 @@
 #BlueJ class context
+<<<<<<< HEAD
 comment0.params=
 comment0.target=TimerText()
 comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ TimerText\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
@@ -7,3 +8,6 @@ comment1.target=TimerText(java.lang.String)
 comment2.params=text
 comment2.target=void\ setText(java.lang.String)
 numComments=3
+=======
+numComments=0
+>>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba

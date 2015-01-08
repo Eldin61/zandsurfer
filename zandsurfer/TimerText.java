@@ -13,7 +13,7 @@ public class TimerText extends Actor
      * Act - do whatever the TimerText wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-<<<<<<< HEAD
+
     public TimerText()
     {
         this("");
@@ -27,6 +27,4 @@ public class TimerText extends Actor
         setImage(new GreenfootImage(text, 24, Color.black, new Color(0, 0, 0, 0)));
     } 
 }
-=======
-}
->>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
+

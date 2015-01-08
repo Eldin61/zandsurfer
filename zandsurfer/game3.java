@@ -13,17 +13,15 @@ public class game3 extends World
     private int spawnX3 = 0;
     private int spawnCounter = 0;
     private int spawnTreasure = 0;
+    private Counter theCounter;
     private static final String bgImageName = "watergoed.jpg";
-    private static final int scrollSpeed = 2;
+    private static final int scrollSpeed = 3;
     private static final int picHeight = (new GreenfootImage(bgImageName)).getHeight();
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
-    private Counter theCounter;
-<<<<<<< HEAD
-    private int timer = 360;
+    private int timer = 3600;
     TimerText timerText = new TimerText();
-=======
->>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
+
     public game3()
     {    
         super(900, 900, 1); 
@@ -32,16 +30,10 @@ public class game3 extends World
         bgBase = new GreenfootImage(getWidth(), picHeight);
         bgBase.drawImage(bgImage, 0, 0);
         prepare();
-<<<<<<< HEAD
-        // add world instance field
 
-        // in the constructor (or a method it calls)
         addObject(timerText, 100, 15); //wherever
         timerText.setText("Time left: " + (timer/60));
         
-            
-=======
->>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
     }
 
     public Counter getCounter()
@@ -51,46 +43,42 @@ public class game3 extends World
     public void act()
     {
         addObjects();
-        scrollPosition += scrollSpeed;
+        timerFunc();
+        if (timer%60==0) timerText.setText("Time left: " + (timer/60));
+                scrollPosition += scrollSpeed;
         while(scrollSpeed > 0 && scrollPosition > picHeight) scrollPosition -= picHeight;
         while(scrollSpeed < 0 && scrollPosition < 0) scrollPosition += picHeight;
         paint(scrollPosition);
-<<<<<<< HEAD
-        timerFunc();
-        timer--;
-        if (timer%60==0) timerText.setText("Time left: " + (timer/60));
-=======
->>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
+
     }
-    private void paint(int position)
+       private void paint(int position)
     {
         GreenfootImage bg = getBackground();
         bg.drawImage(bgBase,0, position);
-        bg.drawImage(bgImage,0 , position - picHeight);
+        bg.drawImage(bgImage, 0, position-(int)Math.signum(scrollSpeed)*picHeight);
     }
-
     private void prepare()
     {
         Boat boat = new Boat();
         addObject(boat, 409, 797);
+        boat.setSpeed(6);
         boat.setLocation(464, 791);
         boat.setLocation(453, 765);
         theCounter = new Counter();
         addObject(theCounter, 810, 20);
     }
-<<<<<<< HEAD
+
     public void timerFunc()
     {
         timer--;
        if (timer<=0)
         {
-            System.out.println("Game Over");
+            Greenfoot.stop();
         } 
+
     }
-=======
->>>>>>> b507e5945b0849b80a5c7b08d90b085da8a923ba
-        
- 
+
+    
     public void addObjects()
     {
         spawnCounter++;
@@ -98,6 +86,7 @@ public class game3 extends World
         spawnX = Greenfoot.getRandomNumber(850)+20;
         spawnX2 = Greenfoot.getRandomNumber(850)+20;
         spawnX3 = Greenfoot.getRandomNumber(150)+50;
+        
         if (spawnCounter == spawnX3 || spawnCounter > 150)
         {
             Rock rock = new Rock();
@@ -108,12 +97,13 @@ public class game3 extends World
             spawnX = 0;
             spawnX2 = 0;
             spawnX3 = 0;
+
         }   
         if(spawnTreasure == 310)
         {
             Schat schat = new Schat();
             addObject(schat, spawnX, 0);
-            Eiland eiland = new Eiland();
+            Rock eiland = new Rock("Eiland");
             addObject(eiland, spawnX2, 0);
             spawnX = 0;
             spawnX2 = 0;

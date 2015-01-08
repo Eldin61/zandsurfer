@@ -27,4 +27,7 @@ public class TimerText extends Actor
         setImage(new GreenfootImage(text, 24, Color.black, new Color(0, 0, 0, 0)));
     } 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904

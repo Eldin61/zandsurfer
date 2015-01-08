@@ -18,5 +18,8 @@ public class Counter extends Actor
     {
         totalCount += score;
         setImage(new GreenfootImage("Score: " + totalCount, 28, Color.BLACK, null));
+        if (score == 1)
+        {
+        }
     }
 }

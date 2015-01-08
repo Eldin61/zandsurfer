@@ -19,9 +19,20 @@ public class game3 extends World
     private static final int picHeight = (new GreenfootImage(bgImageName)).getHeight();
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
+<<<<<<< HEAD
     private int timer = 3600;
     TimerText timerText = new TimerText();
 
+=======
+    private Counter theCounter;
+    private int timer = 6000;
+    TimerText timerText = new TimerText();
+    /**
+     * Dit is de constructor voor game3. 
+     * We pakken ook de background image hier zodat we in een andere methode 
+     * de background kunnen tekenen zodat het lijkt alsof die naar beneden scrolled.
+     */
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
     public game3()
     {    
         super(900, 900, 1); 
@@ -29,17 +40,31 @@ public class game3 extends World
         bgImage = new GreenfootImage(getBackground());
         bgBase = new GreenfootImage(getWidth(), picHeight);
         bgBase.drawImage(bgImage, 0, 0);
+        
         prepare();
+<<<<<<< HEAD
 
         addObject(timerText, 100, 15); //wherever
         timerText.setText("Time left: " + (timer/60));
         
+=======
+        
+        addObject(timerText, 100, 15);
+        timerText.setText("Time left: " + (timer/60));
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
     }
-
+    /**
+     * We returnen de waarde van theCounter hier.
+     */
     public Counter getCounter()
     {
         return theCounter;
     }
+    /**
+     * In de act methode tekenen we de background image voor de scroll effect. 
+     * We hebben ook de methode addObjects gebruikt om random objecten te spawnen in de wereld.
+     * Ook de werking van de timer staat erin.
+     */
     public void act()
     {
         addObjects();
@@ -49,14 +74,28 @@ public class game3 extends World
         while(scrollSpeed > 0 && scrollPosition > picHeight) scrollPosition -= picHeight;
         while(scrollSpeed < 0 && scrollPosition < 0) scrollPosition += picHeight;
         paint(scrollPosition);
+<<<<<<< HEAD
 
     }
        private void paint(int position)
+=======
+        timerFunc();
+        
+    }
+    /**
+     * Hier word de background image echt getekend.
+     */
+    private void paint(int position)
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
     {
         GreenfootImage bg = getBackground();
         bg.drawImage(bgBase,0, position);
         bg.drawImage(bgImage, 0, position-(int)Math.signum(scrollSpeed)*picHeight);
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
     private void prepare()
     {
         Boat boat = new Boat();
@@ -67,18 +106,37 @@ public class game3 extends World
         theCounter = new Counter();
         addObject(theCounter, 810, 20);
     }
+<<<<<<< HEAD
 
+=======
+    /**
+     * Hier tellen we af voor de timer.
+     */
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
     public void timerFunc()
     {
-        timer--;
+       timer--;
        if (timer<=0)
         {
+<<<<<<< HEAD
             Greenfoot.stop();
         } 
 
     }
 
     
+=======
+        } 
+       if (timer%60==0) timerText.setText("Time left: " + (timer/60));
+    }
+        
+    /**
+     * Hier geven we de objecten een random X waarde tussen 20 en 870. Zo spawnt die op een random plaats
+     * bovenaan de map. Ook de spawncounter staat erin en die is laten we ook random activeren. Door middel 
+     * van een random getal tussen de 50 en 200. Als spawncounter boven de 150 komt willen we hem gelijk 
+     * spawnen omdat de act steps anders veel te snel gaan.
+     */
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
     public void addObjects()
     {
         spawnCounter++;

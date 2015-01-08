@@ -15,22 +15,33 @@ public class Schat extends Actor
      */
     public void act() 
     {
-        colission();
-        movement();        
+        if (!movement())
+        {
+            colission();
+        }
     }    
+
+    
+
+    private boolean movement()
+    {
+        setLocation(getX(), getY() + speed);
+        if(getY() == getWorld().getHeight() - 10)
+        {
+            getWorld().removeObject(this);
+            return true;
+        } else {
+            return false;
+        }
+    }
     public void colission()
     {
         Actor rock = getOneIntersectingObject(Rock.class);
         if(rock != null)
         {
-            getWorld().removeObject(rock);
-        }
-    }
-    public void movement()
-    {
-        setLocation(getX(), getY() + speed);
-        if(getY() == getWorld().getHeight() - 10)
-        {
+            int newSpawn = Greenfoot.getRandomNumber(800);
+            Schat schat = new Schat();
+            getWorld().addObject(schat, newSpawn, 0);
             getWorld().removeObject(this);
         }
     }

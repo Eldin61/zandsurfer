@@ -1,16 +1,27 @@
 #BlueJ class context
 comment0.params=
 comment0.target=game3()
+comment0.text=\r\n\ Dit\ is\ de\ constructor\ voor\ game3.\ \r\n\ We\ pakken\ ook\ de\ background\ image\ hier\ zodat\ we\ in\ een\ andere\ methode\ \r\n\ de\ background\ kunnen\ tekenen\ zodat\ het\ lijkt\ alsof\ die\ naar\ beneden\ scrolled.\r\n
 comment1.params=
 comment1.target=Counter\ getCounter()
+comment1.text=\r\n\ We\ returnen\ de\ waarde\ van\ theCounter\ hier.\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ In\ de\ act\ methode\ tekenen\ we\ de\ background\ image\ voor\ de\ scroll\ effect.\ \r\n\ We\ hebben\ ook\ de\ methode\ addObjects\ gebruikt\ om\ random\ objecten\ te\ spawnen\ in\ de\ wereld.\r\n\ Ook\ de\ werking\ van\ de\ timer\ staat\ erin.\r\n
 comment3.params=position
 comment3.target=void\ paint(int)
+comment3.text=\r\n\ Hier\ word\ de\ background\ image\ echt\ getekend.\r\n
 comment4.params=
 comment4.target=void\ prepare()
 comment5.params=
 comment5.target=void\ timerFunc()
+<<<<<<< HEAD
 comment6.params=
 comment6.target=void\ addObjects()
+=======
+comment5.text=\r\n\ Hier\ tellen\ we\ af\ voor\ de\ timer.\r\n
+comment6.params=
+comment6.target=void\ addObjects()
+comment6.text=\r\n\ Hier\ geven\ we\ de\ objecten\ een\ random\ X\ waarde\ tussen\ 20\ en\ 870.\ Zo\ spawnt\ die\ op\ een\ random\ plaats\r\n\ bovenaan\ de\ map.\ Ook\ de\ spawncounter\ staat\ erin\ en\ die\ is\ laten\ we\ ook\ random\ activeren.\ Door\ middel\ \r\n\ van\ een\ random\ getal\ tussen\ de\ 50\ en\ 200.\ Als\ spawncounter\ boven\ de\ 150\ komt\ willen\ we\ hem\ gelijk\ \r\n\ spawnen\ omdat\ de\ act\ steps\ anders\ veel\ te\ snel\ gaan.\r\n
+>>>>>>> 6e9e17024177ebf989735bc9112624eb54383904
 numComments=7

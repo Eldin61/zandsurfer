@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boat extends Actor
 {
-    private int speed = 10;
+    private int speed;
     public void act() 
     {
         movement();
@@ -21,6 +21,7 @@ public class Boat extends Actor
     public Boat()
     {
         setImage();
+
     }
 
     public void setImage()
@@ -28,34 +29,34 @@ public class Boat extends Actor
         setImage(new GreenfootImage("bootgame3.png"));
     }
 
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int i) {
+        speed = i;  
+    }
+
     public void movement()
     {
         if(Greenfoot.isKeyDown("a"))
         {
-            setLocation(getX() - speed, getY());
+            setLocation(getX() - getSpeed(), getY());
         }
         if (Greenfoot.isKeyDown("d"))
         {
-            setLocation(getX() + speed, getY());
+            setLocation(getX() + getSpeed(), getY());
         }
     }
 
     public void colission()
     {
         Actor rock = getOneIntersectingObject(Rock.class);
-        Actor eiland = getOneIntersectingObject(Eiland.class);
         if (rock != null)
         {
             Explosion explosion = new Explosion();
             getWorld().addObject(explosion, getX(), getY());
             getWorld().removeObject(rock);
-            getWorld().removeObject(this);
-        }
-        if(eiland != null)
-        {
-            Explosion explosion = new Explosion();
-            getWorld().addObject(explosion, getX(), getY());
-            getWorld().removeObject(eiland);
             getWorld().removeObject(this);
         }
     }

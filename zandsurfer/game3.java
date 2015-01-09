@@ -13,19 +13,20 @@ public class game3 extends World
     private int spawnX3 = 0;
     private int spawnCounter = 0;
     private int spawnTreasure = 0;
+    private Counter theCounter;
     private static final String bgImageName = "watergoed.jpg";
-    private static final int scrollSpeed = 2;
+    private static final int scrollSpeed = 3;
     private static final int picHeight = (new GreenfootImage(bgImageName)).getHeight();
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0;
-    private Counter theCounter;
-    private int timer = 6000;
+    private int timer = 3600;
     TimerText timerText = new TimerText();
     /**
      * Dit is de constructor voor game3. 
      * We pakken ook de background image hier zodat we in een andere methode 
      * de background kunnen tekenen zodat het lijkt alsof die naar beneden scrolled.
      */
+
     public game3()
     {    
         super(700, 600, 1); 
@@ -33,10 +34,8 @@ public class game3 extends World
         bgImage = new GreenfootImage(getBackground());
         bgBase = new GreenfootImage(getWidth(), picHeight);
         bgBase.drawImage(bgImage, 0, 0);
-        
         prepare();
-        
-        addObject(timerText, 100, 15);
+        addObject(timerText, 100, 15); //wherever
         timerText.setText("Time left: " + (timer/60));
     }
     /**
@@ -54,13 +53,11 @@ public class game3 extends World
     public void act()
     {
         addObjects();
-        scrollPosition += scrollSpeed;
-        while(scrollSpeed > 0 && scrollPosition > picHeight) scrollPosition -= picHeight;
-        while(scrollSpeed < 0 && scrollPosition < 0) scrollPosition += picHeight;
-        paint(scrollPosition);
-        timerFunc();
-        
+        if (timer%60==0) timerText.setText("Time left: " + (timer/60));
+         timerFunc();
     }
+       
+        
     /**
      * Hier word de background image echt getekend.
      */
@@ -68,27 +65,44 @@ public class game3 extends World
     {
         GreenfootImage bg = getBackground();
         bg.drawImage(bgBase,0, position);
-        bg.drawImage(bgImage,0 , position - picHeight);
+        bg.drawImage(bgImage, 0, position-(int)Math.signum(scrollSpeed)*picHeight);
     }
-    
     private void prepare()
     {
         Boat boat = new Boat();
+<<<<<<< HEAD
         addObject(boat, getWidth()/2, 530);
+=======
+        addObject(boat, 409, 797);
+        boat.setSpeed(6);
+        boat.setLocation(464, 791);
+        boat.setLocation(453, 765);
+>>>>>>> 5c28c92dd9e5cb2fd78d995b40a9bb6f02d78734
         theCounter = new Counter();
         addObject(theCounter, 580, 20);
     }
+
+
+
     /**
      * Hier tellen we af voor de timer.
      */
+
     public void timerFunc()
     {
        timer--;
        if (timer<=0)
         {
+
+            Greenfoot.stop();
         } 
-       if (timer%60==0) timerText.setText("Time left: " + (timer/60));
+                        scrollPosition += scrollSpeed;
+        while(scrollSpeed > 0 && scrollPosition > picHeight) scrollPosition -= picHeight;
+        while(scrollSpeed < 0 && scrollPosition < 0) scrollPosition += picHeight;
+        paint(scrollPosition);
     }
+      
+  
         
     /**
      * Hier geven we de objecten een random X waarde tussen 20 en 870. Zo spawnt die op een random plaats
@@ -96,6 +110,7 @@ public class game3 extends World
      * van een random getal tussen de 50 en 200. Als spawncounter boven de 150 komt willen we hem gelijk 
      * spawnen omdat de act steps anders veel te snel gaan.
      */
+
     public void addObjects()
     {
         spawnCounter++;
@@ -103,6 +118,7 @@ public class game3 extends World
         spawnX = Greenfoot.getRandomNumber(550)+20;
         spawnX2 = Greenfoot.getRandomNumber(550)+20;
         spawnX3 = Greenfoot.getRandomNumber(150)+50;
+        
         if (spawnCounter == spawnX3 || spawnCounter > 150)
         {
             Rock rock = new Rock();
@@ -113,17 +129,19 @@ public class game3 extends World
             spawnX = 0;
             spawnX2 = 0;
             spawnX3 = 0;
+
         }   
         if(spawnTreasure == 310)
         {
             Schat schat = new Schat();
             addObject(schat, spawnX, 0);
-            Eiland eiland = new Eiland();
+            Rock eiland = new Rock("Eiland");
             addObject(eiland, spawnX2, 0);
             spawnX = 0;
             spawnX2 = 0;
             spawnTreasure = 0;
         }
     }
-
 }
+
+

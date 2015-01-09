@@ -39,7 +39,7 @@ public class Schat extends Actor
         Actor rock = getOneIntersectingObject(Rock.class);
         if(rock != null)
         {
-            int newSpawn = Greenfoot.getRandomNumber(800);
+            int newSpawn = Greenfoot.getRandomNumber(550)+20;
             Schat schat = new Schat();
             getWorld().addObject(schat, newSpawn, 0);
             getWorld().removeObject(this);

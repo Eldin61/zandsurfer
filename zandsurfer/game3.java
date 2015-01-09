@@ -28,7 +28,7 @@ public class game3 extends World
      */
     public game3()
     {    
-        super(900, 900, 1); 
+        super(700, 600, 1); 
         setBackground(bgImageName);
         bgImage = new GreenfootImage(getBackground());
         bgBase = new GreenfootImage(getWidth(), picHeight);
@@ -74,11 +74,9 @@ public class game3 extends World
     private void prepare()
     {
         Boat boat = new Boat();
-        addObject(boat, 409, 797);
-        boat.setLocation(464, 791);
-        boat.setLocation(453, 765);
+        addObject(boat, getWidth()/2, 530);
         theCounter = new Counter();
-        addObject(theCounter, 810, 20);
+        addObject(theCounter, 580, 20);
     }
     /**
      * Hier tellen we af voor de timer.
@@ -102,8 +100,8 @@ public class game3 extends World
     {
         spawnCounter++;
         spawnTreasure++;
-        spawnX = Greenfoot.getRandomNumber(850)+20;
-        spawnX2 = Greenfoot.getRandomNumber(850)+20;
+        spawnX = Greenfoot.getRandomNumber(550)+20;
+        spawnX2 = Greenfoot.getRandomNumber(550)+20;
         spawnX3 = Greenfoot.getRandomNumber(150)+50;
         if (spawnCounter == spawnX3 || spawnCounter > 150)
         {

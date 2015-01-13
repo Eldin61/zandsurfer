@@ -9,12 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Boat extends Actor
 {
     private int speed;
+    private int s;
+    private final int score = 1;
+   
     public void act() 
     {
         movement();
-        if(!hitTreasure())
-        {
-            colission();
+       
+              if (!hitTreasure()){
+            
+           // colission();
         }
     }    
 
@@ -60,16 +64,16 @@ public class Boat extends Actor
             getWorld().removeObject(this);
         }
     }
-
-    private boolean hitTreasure()
+    
+    public boolean hitTreasure()
     {
         Actor schat = getOneIntersectingObject(Schat.class);
         if (schat != null)
-        {
+        {           
+            getWorld().removeObject(schat);
             game3 gameWorld = (game3) getWorld();
             Counter counter = gameWorld.getCounter();
-            counter.bumpCount(1);
-            getWorld().removeObject(schat);
+            counter.bumpCount(score);
             return true;
         } else 
         {
@@ -77,4 +81,5 @@ public class Boat extends Actor
         }
 
     }
+
 }

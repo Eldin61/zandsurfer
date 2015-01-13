@@ -14,11 +14,11 @@ public class Counter extends Actor
     {
         setImage(new GreenfootImage("Score: 0", 28, Color.BLACK, null));
     }
-    public void bumpCount(int score)
+    public void bumpCount(int scoré)
     {
-        totalCount += score;
+        totalCount += scoré;
         setImage(new GreenfootImage("Score: " + totalCount, 28, Color.BLACK, null));
-        if (score == 1)
+        if (scoré == 1)
         {
         }
     }

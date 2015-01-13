@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Counter()
-comment1.params=score
+comment1.params=scor\u00E9
 comment1.target=void\ bumpCount(int)
 numComments=2
